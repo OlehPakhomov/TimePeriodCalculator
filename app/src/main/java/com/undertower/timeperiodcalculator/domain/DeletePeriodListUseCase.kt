@@ -1,7 +1,7 @@
 package com.undertower.timeperiodcalculator.domain
 
-class DeletePeriodListUseCase {
+class DeletePeriodListUseCase (private  val periodListRepository: PeriodListRepository) {
     fun deletePeriodListUseCase(periodItemList: PeriodItemList){
-        TODO()
+        periodListRepository.deletePeriodListUseCase(periodItemList)
     }
 }

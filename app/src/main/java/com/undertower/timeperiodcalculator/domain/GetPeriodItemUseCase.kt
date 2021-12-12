@@ -1,7 +1,7 @@
 package com.undertower.timeperiodcalculator.domain
 
-class GetPeriodItemUseCase {
-    fun getPeriodItemUseCase():PeriodItemList{
-        TODO()
+class GetPeriodItemUseCase (private  val periodListRepository: PeriodListRepository){
+    fun getPeriodItemUseCase(periodItemId:Int):PeriodItemList{
+        return periodListRepository.getPeriodItemUseCase(periodItemId)
     }
 }

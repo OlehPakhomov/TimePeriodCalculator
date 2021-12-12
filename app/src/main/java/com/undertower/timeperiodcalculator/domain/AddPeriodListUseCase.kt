@@ -1,7 +1,7 @@
 package com.undertower.timeperiodcalculator.domain
 
-class AddPeriodListUseCase {
+class AddPeriodListUseCase (private  val periodListRepository: PeriodListRepository){
     fun addPeriodListUseCase(periodItemList: PeriodItemList){
-        TODO()
+        periodListRepository.addPeriodListUseCase(periodItemList)
     }
 }
