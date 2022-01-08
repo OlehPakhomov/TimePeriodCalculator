@@ -1,12 +1,25 @@
 package com.undertower.timeperiodcalculator.data
 
+import android.annotation.SuppressLint
 import com.undertower.timeperiodcalculator.domain.PeriodItemList
 import com.undertower.timeperiodcalculator.domain.PeriodListRepository
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.time.Period
+import java.util.*
 
+@SuppressLint("NewApi")
 object PeriodListRepositoryImpl: PeriodListRepository {
 
     private val periodList = mutableListOf<PeriodItemList>()
     private var autoIncrementId = 0
+
+    init {
+        for (i in 0 until 10){
+            val periodItemList = PeriodItemList(Date(), Date(), Period.ZERO)
+            addPeriodListUseCase(periodItemList)
+        }
+    }
 
     override fun addPeriodListUseCase(periodItemList: PeriodItemList) {
         if(periodItemList.id == PeriodItemList.UNDIFINED_ID){
